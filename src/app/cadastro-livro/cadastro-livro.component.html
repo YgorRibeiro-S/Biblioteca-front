@@ -1,0 +1,50 @@
+<div class="container mt-5">
+
+<h2 class="mb-4">Cadastrar Livro</h2>
+
+<div class="card p-4 shadow">
+
+<input
+type="text"
+class="form-control mb-3"
+placeholder="Nome do livro"
+[(ngModel)]="novoLivro.nome"
+/>
+
+<input
+type="text"
+class="form-control mb-3"
+placeholder="Autor"
+[(ngModel)]="novoLivro.autor"
+/>
+
+<input
+type="text"
+class="form-control mb-3"
+placeholder="ISBN"
+[(ngModel)]="novoLivro.isbn"
+/>
+
+<input
+type="number"
+class="form-control mb-3"
+placeholder="Quantidade"
+[(ngModel)]="novoLivro.quantidade"
+/>
+
+<input
+type="file"
+class="form-control mb-3"
+(change)="selecionarImagem($event)"
+/>
+
+<button
+class="btn btn-success"
+(click)="cadastrar()"
+>
+Cadastrar Livro
+</button>
+
+</div>
+
+</div>

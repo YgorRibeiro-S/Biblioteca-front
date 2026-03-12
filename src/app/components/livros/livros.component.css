@@ -1,0 +1,45 @@
+
+.livro-item {
+  padding: 15px 0;
+  background: #f8f6f2;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+
+.livro-item:hover {
+  background: #f0ebe3;
+  transform: scale(1.01);
+}
+
+
+.livro-img {
+  width: 110px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+.titulo-biblioteca {
+  color: #4b2e1e;
+  font-size: 28px;
+}
+
+
+.botao-cadastro {
+  background-color: #8b5a2b; 
+  color: white;
+  font-weight: bold;
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  transition: 0.3s;
+}
+
+
+.botao-cadastro:hover {
+  background-color: #6f451f;
+  transform: scale(1.05);
+}
