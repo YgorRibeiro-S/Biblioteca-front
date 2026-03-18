@@ -1,60 +1,42 @@
-<div class="container mt-4">
+<div class="container-fluid">
 
-  <div class="d-flex justify-content-between align-items-center mb-4 header-biblioteca">
-    <h2 class="fw-bold titulo-biblioteca">
-       Sistema Biblioteca
-    </h2>
+  <div class="conteudo-full">
 
-    <button class="btn botao-cadastro" routerLink="/cadastro">
-      + Cadastrar Livro
-    </button>
-  </div>
+    <div class="header-biblioteca">
+      <h2>Sistema Biblioteca</h2>
 
-  <div class="row">
+      <button class="botao-cadastro" routerLink="/cadastro">
+        + Cadastrar Livro
+      </button>
+    </div>
 
-    <div class="col-12 mb-4" *ngFor="let livro of livros">
+    <div class="lista-livros">
 
-      <div class="row align-items-center livro-item p-3">
+      <div class="livro-item" *ngFor="let livro of livros">
 
-        
-        <div class="col-md-2 text-center">
+        <div class="livro-card">
+
           <img
             [src]="'http://localhost:8080/livros/' + livro.id + '/imagem'"
             class="livro-img"
             alt="Capa do livro">
-        </div>
 
-       
-        <div class="col-md-10">
+          <div class="card-body">
 
-          <h5 class="fw-bold text-dark">
-            {{ livro.nome }}
-          </h5>
+            <h6>{{ livro.nome }}</h6>
+            <p>{{ livro.autor }}</p>
+            <p>ISBN: {{ livro.isbn }}</p>
+            <p class="qtd">Qtd: {{ livro.quantidade }}</p>
 
-          <p class="mb-1 text-muted">
-            Autor: {{ livro.autor }}
-          </p>
+            <button (click)="inativarLivro(livro.id)">
+              Inativar
+            </button>
 
-          <p class="mb-1">
-            ISBN: {{ livro.isbn }}
-          </p>
-
-          <p class="text-success mt-2 fw-semibold">
-            Quantidade disponível: {{ livro.quantidade }}
-          </p>
-
-         
-          <button
-            class="btn btn-sm btn-danger mt-2"
-            (click)="inativarLivro(livro.id)">
-            Inativar
-          </button>
+          </div>
 
         </div>
 
       </div>
-
-      <hr>
 
     </div>
 

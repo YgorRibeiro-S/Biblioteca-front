@@ -1,45 +1,100 @@
 
-.livro-item {
-  padding: 15px 0;
-  background: #f8f6f2;
-  border-radius: 10px;
-  transition: 0.2s;
+
+body {
+  margin: 0;
+  font-family: Arial;
+  background-color: #f5f1ea;
 }
 
 
-.livro-item:hover {
-  background: #f0ebe3;
-  transform: scale(1.01);
+.layout {
+  display: flex;
 }
 
 
-.livro-img {
-  width: 110px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background-color: #5a3825;
+  color: white;
+  padding: 20px;
 }
 
 
-.titulo-biblioteca {
-  color: #4b2e1e;
-  font-size: 28px;
+.conteudo {
+  flex: 1;
+  padding: 20px;
+}
+
+.conteudo-full {
+  padding: 20px 40px;
+}
+
+
+.header-biblioteca {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.header-biblioteca h2 {
+  color: #5a3825;
 }
 
 
 .botao-cadastro {
-  background-color: #8b5a2b; 
+  background-color: #8b5e3c;
   color: white;
-  font-weight: bold;
-  padding: 10px 22px;
-  border-radius: 8px;
   border: none;
-  transition: 0.3s;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 
-.botao-cadastro:hover {
-  background-color: #6f451f;
-  transform: scale(1.05);
+.lista-livros {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+
+.livro-card {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.livro-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.livro-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+
+.card-body h6 {
+  color: #5a3825;
+}
+
+.qtd {
+  color: green;
+}
+
+
+.card-body button {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #a94442;
+  color: white;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
 }
