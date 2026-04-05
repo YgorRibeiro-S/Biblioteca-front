@@ -8,12 +8,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LivrosComponent } from './components/livros/livros.component';
 import { CadastroLivroComponent } from './cadastro-livro/cadastro-livro.component';
+import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { UsuarioFormComponent } from './pages/usuario-form/usuario-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LivrosComponent,
-    CadastroLivroComponent
+    CadastroLivroComponent,
+    UsuariosComponent,
+    UsuarioFormComponent
   ],
   imports: [
     BrowserModule,

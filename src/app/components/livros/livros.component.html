@@ -5,9 +5,40 @@
     <div class="header-biblioteca">
       <h2>Sistema Biblioteca</h2>
 
-      <button class="botao-cadastro" routerLink="/cadastro">
-        + Cadastrar Livro
-      </button>
+      <div>
+        <button class="botao-cadastro" routerLink="/cadastro">
+          + Cadastrar Livro
+        </button>
+
+        <button class="botao-cadastro" routerLink="/usuarios">
+          Usuários
+        </button>
+      </div>
+    </div>
+
+    <button class="botao-estatisticas" (click)="toggleEstatisticas()">
+      Ver Estatísticas
+    </button>
+
+    <div class="estatisticas" *ngIf="mostrarEstatisticas && estatisticas">
+
+      <div class="card-estatistica">
+        <h4>Total de Livros</h4>
+        <p>{{ estatisticas.totalLivros }}</p>
+      </div>
+
+      <div class="card-estatistica">
+        <h4>Total de Exemplares</h4>
+        <p>{{ estatisticas.totalExemplares }}</p>
+      </div>
+
+      <div class="card-estatistica">
+        <h4>Sem Estoque</h4>
+        <p [style.color]="estatisticas.livrosSemEstoque > 0 ? 'red' : 'green'">
+          {{ estatisticas.livrosSemEstoque }}
+        </p>
+      </div>
+
     </div>
 
     <div class="lista-livros">
@@ -27,6 +58,18 @@
             <p>{{ livro.autor }}</p>
             <p>ISBN: {{ livro.isbn }}</p>
             <p class="qtd">Qtd: {{ livro.quantidade }}</p>
+
+            <div class="acoes-livro">
+
+  <button (click)="emprestarLivro(livro.id)">
+    Emprestar
+  </button>
+
+  <button (click)="devolverLivro(livro.id)">
+    Devolver
+  </button>
+
+</div>
 
             <button (click)="inativarLivro(livro.id)">
               Inativar

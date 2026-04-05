@@ -1,0 +1,63 @@
+.usuarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.usuario-card {
+  background: linear-gradient(145deg, #4e342e, #3e2723);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.usuario-card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: #ff9800;
+  top: 0;
+  left: 0;
+}
+
+.usuario-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.usuario-topo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ff9800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 22px;
+  color: #3e2723;
+}
+
+.usuario-info {
+  text-align: center;
+}
+
+.usuario-info h5 {
+  margin-bottom: 5px;
+}
+
+.usuario-info p {
+  opacity: 0.8;
+  font-size: 14px;
+}

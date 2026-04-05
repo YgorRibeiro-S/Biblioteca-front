@@ -1,0 +1,28 @@
+<div class="container mt-4">
+
+  <div class="header-biblioteca">
+    <h2>Usuários</h2>
+
+    <button class="btn botao-cadastro" routerLink="/usuarios/cadastro">
+      Cadastrar Usuário
+    </button>
+  </div>
+
+  <div class="usuarios-grid">
+    <div class="usuario-card" *ngFor="let usuario of usuarios">
+
+      <div class="usuario-topo">
+        <div class="avatar">
+          {{ usuario.nome.charAt(0).toUpperCase() }}
+        </div>
+      </div>
+
+      <div class="usuario-info">
+        <h5>{{ usuario.nome }}</h5>
+        <p>{{ usuario.email }}</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>

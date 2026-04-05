@@ -23,4 +23,24 @@ export class LivroService {
     return this.http.delete<void>(`${this.apiUrl}/inativar/${id}`);
   }
 
+  getEstatisticas() {
+  return this.http.get<any>('http://localhost:8080/livros/estatisticas');
+}
+
+emprestar(livroId: number, usuarioId: number) {
+  return this.http.post(
+    `http://localhost:8080/livros/emprestar/${livroId}?usuarioId=${usuarioId}`,
+    {},
+    { responseType: 'text' }
+  );
+}
+
+devolver(livroId: number) {
+  return this.http.post(
+    `http://localhost:8080/livros/devolver/${livroId}`,
+    {},
+    { responseType: 'text' }
+  );
+}
+
 }

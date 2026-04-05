@@ -98,3 +98,23 @@ body {
   padding: 6px;
   border-radius: 6px;
 }
+
+.botao-estatisticas {
+  margin-left: 10px;
+  background-color: #5a3825;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.acoes-livro {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.acoes-livro button {
+  flex: 1;
+}
