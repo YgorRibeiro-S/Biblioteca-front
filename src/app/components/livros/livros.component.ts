@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LivroService } from 'src/app/services/livro.service';
+import { EmprestimoService } from 'src/app/services/emprestimo.service';
 
 @Component({
   selector: 'app-livros',
@@ -9,25 +10,27 @@ import { LivroService } from 'src/app/services/livro.service';
 export class LivrosComponent implements OnInit {
 
   livros: any[] = [];
-
-   estatisticas: any;
+   
+  estatisticas: any;
 
    usuarioSelecionadoId: number = 1;
 
-  constructor(private livroService: LivroService) {}
+ constructor(
+  private livroService: LivroService,
+  private emprestimoService: EmprestimoService
+) {}
 
   ngOnInit(): void {
-    this.listar();
-    this.carregarLivros();
-  }
+  this.listar();
+}
+
+listar() {
+  this.livroService.listar().subscribe(dados => {
+    this.livros = dados;
+  });
+}
 
   mostrarEstatisticas: boolean = false;
-
-  listar() {
-    this.livroService.listar().subscribe(dados => {
-      this.livros = dados;
-    });
-  }
 
   toggleEstatisticas() {
   this.mostrarEstatisticas = !this.mostrarEstatisticas;
@@ -50,37 +53,31 @@ export class LivrosComponent implements OnInit {
   }
 
 
-  inativarLivro(id: number) {
-    if(confirm("Tem certeza que deseja inativar esse livro?")){
-      this.livroService.inativar(id).subscribe(() => {
-        alert("Livro inativado com sucesso!");
+ inativarLivro(id: number) {
+  if(confirm("Tem certeza que deseja inativar esse livro?")) {
+    this.livroService.inativar(id).subscribe(() => {
+      alert("Livro inativado com sucesso!");
 
-        this.listar();
-      });
-    }
+      this.listar();
 
-    
+    });
+
   }
-
-  carregarLivros() {
-  this.livroService.listar().subscribe(dados => {
-    this.livros = dados;
-  });
 }
 
   emprestarLivro(livroId: number) {
-  this.livroService.emprestar(livroId, this.usuarioSelecionadoId)
+  this.emprestimoService.emprestar(livroId, this.usuarioSelecionadoId)
     .subscribe(res => {
       alert(res);
-      this.carregarLivros();
+     this.listar();
     });
 }
 
 devolverLivro(livroId: number) {
-  this.livroService.devolver(livroId)
+ this.emprestimoService.devolver(livroId)
     .subscribe(res => {
       alert(res);
-      this.carregarLivros();
+     this.listar();
     });
 }
 

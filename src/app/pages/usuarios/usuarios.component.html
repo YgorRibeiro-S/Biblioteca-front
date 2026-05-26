@@ -1,5 +1,11 @@
 <div class="container mt-4">
 
+  <div class="topo">
+  <button class="btn-voltar" (click)="voltar()">
+    ←
+  </button>
+ </div>
+ 
   <div class="header-biblioteca">
     <h2>Usuários</h2>
 
@@ -8,21 +14,28 @@
     </button>
   </div>
 
-  <div class="usuarios-grid">
-    <div class="usuario-card" *ngFor="let usuario of usuarios">
+ <div class="usuarios-grid">
+  <div class="usuario-card" *ngFor="let usuario of usuarios">
 
-      <div class="usuario-topo">
-        <div class="avatar">
-          {{ usuario.nome.charAt(0).toUpperCase() }}
-        </div>
+    <div class="usuario-topo">
+      <div class="avatar">
+        {{ usuario.nome.charAt(0).toUpperCase() }}
       </div>
-
-      <div class="usuario-info">
-        <h5>{{ usuario.nome }}</h5>
-        <p>{{ usuario.email }}</p>
-      </div>
-
     </div>
+
+    <div class="usuario-info">
+      <h5>{{ usuario.nome }}</h5>
+      <p>{{ usuario.email }}</p>
+    </div>
+
+    <button
+      class="btn btn-warning"
+      [routerLink]="['/usuarios/editar', usuario.id]">
+
+      Editar
+    </button>
+
   </div>
+</div>
 
 </div>

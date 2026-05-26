@@ -12,14 +12,22 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) {}
 
-  listar(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(`${this.apiUrl}/listar`);
-  }
+  listar(): Observable<any> {
+  return this.http.get(`${this.apiUrl}`);
+}
 
   cadastrar(usuario: Usuario): Observable<any> {
-  return this.http.post(`${this.apiUrl}/cadastrar`, usuario, {
-    responseType: 'text'
-  });
+ return this.http.post(`${this.apiUrl}`, usuario, {
+  responseType: 'text'
+});
+}
+
+buscarPorId(id: number): Observable<any> {
+  return this.http.get(`${this.apiUrl}/buscar/${id}`);
+}
+
+atualizar(id: number, usuario: Usuario): Observable<any> {
+  return this.http.put(`${this.apiUrl}/${id}`, usuario);
 }
 
 }

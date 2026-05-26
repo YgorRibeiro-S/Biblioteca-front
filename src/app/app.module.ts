@@ -10,6 +10,9 @@ import { LivrosComponent } from './components/livros/livros.component';
 import { CadastroLivroComponent } from './cadastro-livro/cadastro-livro.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { UsuarioFormComponent } from './pages/usuario-form/usuario-form.component';
+import { EstatisticasComponent } from './pages/estatisticas/estatisticas.component';
+import { LivrosStatusComponent } from './pages/livros-status/livros-status.component';
+import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { UsuarioFormComponent } from './pages/usuario-form/usuario-form.componen
     LivrosComponent,
     CadastroLivroComponent,
     UsuariosComponent,
-    UsuarioFormComponent
+    UsuarioFormComponent,
+    EstatisticasComponent,
+    LivrosStatusComponent,
+    EditarUsuarioComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,21 @@
+<h2>Livros Ativos</h2>
+
+<div *ngFor="let livro of livrosAtivos">
+  {{ livro.nome }}
+
+  <button (click)="inativarLivro(livro.id)">
+    Inativar
+  </button>
+</div>
+
+<hr>
+
+<h2>Livros Inativos</h2>
+
+<div *ngFor="let livro of livrosInativos">
+  {{ livro.nome }}
+
+  <button (click)="ativarLivro(livro.id)">
+    Ativar
+  </button>
+</div>

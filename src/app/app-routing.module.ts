@@ -7,14 +7,24 @@ import { CadastroLivroComponent } from './cadastro-livro/cadastro-livro.componen
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { UsuarioFormComponent } from './pages/usuario-form/usuario-form.component';
 
+import { EstatisticasComponent } from './pages/estatisticas/estatisticas.component';
+import { LivrosStatusComponent } from './pages/livros-status/livros-status.component';
+import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
+
 const routes: Routes = [
   { path: '', component: LivrosComponent },
 
   { path: 'cadastro', component: CadastroLivroComponent },
 
-  { path: 'usuarios', component: UsuariosComponent },
   { path: 'usuarios/cadastro', component: UsuarioFormComponent },
-  { path: 'usuarios/editar/:id', component: UsuarioFormComponent }
+  { path: 'usuarios/editar/:id', component: UsuarioFormComponent },
+  { path: 'usuarios', component: UsuariosComponent },
+
+  { path: 'estatisticas',component: EstatisticasComponent},
+
+  {path: 'livros/status',component: LivrosStatusComponent},
+
+  {path: 'usuarios/editar/:id',component: EditarUsuarioComponent},
 ];
 
 @NgModule({

@@ -15,32 +15,28 @@ export class LivroService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
+  livrosInativos(): Observable<any[]> {
+  return this.http.get<any[]>(`${this.apiUrl}/inativos`);
+}
+
   cadastrar(livro: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, livro);
   }
 
-  inativar(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/inativar/${id}`);
-  }
+ inativar(id: number): Observable<any> {
+  return this.http.put(`${this.apiUrl}/inativar/${id}`, {}, {
+    responseType: 'text'
+  });
+}
+
+  ativar(id: number): Observable<any> {
+  return this.http.put(`${this.apiUrl}/ativar/${id}`, {}, {
+    responseType: 'text'
+  });
+}
 
   getEstatisticas() {
   return this.http.get<any>('http://localhost:8080/livros/estatisticas');
-}
-
-emprestar(livroId: number, usuarioId: number) {
-  return this.http.post(
-    `http://localhost:8080/livros/emprestar/${livroId}?usuarioId=${usuarioId}`,
-    {},
-    { responseType: 'text' }
-  );
-}
-
-devolver(livroId: number) {
-  return this.http.post(
-    `http://localhost:8080/livros/devolver/${livroId}`,
-    {},
-    { responseType: 'text' }
-  );
 }
 
 }

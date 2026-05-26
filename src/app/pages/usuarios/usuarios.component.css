@@ -61,3 +61,22 @@
   opacity: 0.8;
   font-size: 14px;
 }
+
+.topo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-voltar {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-voltar:hover {
+  transform: scale(1.1);
+}

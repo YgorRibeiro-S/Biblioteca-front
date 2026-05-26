@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-usuarios',
@@ -11,7 +12,10 @@ export class UsuariosComponent implements OnInit {
 
   usuarios: Usuario[] = [];
 
-  constructor(private usuarioService: UsuarioService) {}
+  constructor(
+    private usuarioService: UsuarioService,
+    private location: Location
+  ) {}
 
   ngOnInit(): void {
     this.carregarUsuarios();
@@ -22,4 +26,9 @@ export class UsuariosComponent implements OnInit {
       this.usuarios = dados;
     });
   }
+
+  voltar(): void {
+  this.location.back();
+}
+
 }
