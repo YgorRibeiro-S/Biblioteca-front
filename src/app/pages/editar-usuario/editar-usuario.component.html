@@ -1,34 +1,47 @@
 <div class="container mt-4">
 
-  <h2>Editar Usuário</h2>
+  <h2 class="fw-bold text-success mb-4">
+    Editar Usuário
+  </h2>
 
-  <form (ngSubmit)="atualizar()">
+  <div class="card border-0 shadow-sm p-4">
 
-    <div class="mb-3">
+    <form (ngSubmit)="atualizar()">
 
-      <label>Nome</label>
+      <div class="mb-3">
 
-      <input
-        type="text"
-        class="form-control"
-        [(ngModel)]="usuario.nome"
-        name="nome">
-    </div>
+        <label>Nome</label>
 
-    <div class="mb-3">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="usuario.nome"
+          name="nome">
 
-      <label>Email</label>
+      </div>
 
-      <input
-        type="email"
-        class="form-control"
-        [(ngModel)]="usuario.email"
-        name="email">
-    </div>
+      <div class="mb-3">
 
-    <button class="btn btn-primary" type="submit">
-      Salvar
-    </button>
+        <label>Email</label>
 
-  </form>
+        <input
+          type="email"
+          class="form-control"
+          [(ngModel)]="usuario.email"
+          name="email">
+
+      </div>
+
+      <button
+        class="btn btn-success w-100"
+        type="submit">
+
+        Salvar
+
+      </button>
+
+    </form>
+
+  </div>
+
 </div>

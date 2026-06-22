@@ -28,6 +28,7 @@
 
 .usuario-card:hover {
   transform: translateY(-5px) scale(1.02);
+  height: 100%;
 }
 
 .usuario-topo {
@@ -58,8 +59,9 @@
 }
 
 .usuario-info p {
-  opacity: 0.8;
+  opacity: 0.75;
   font-size: 14px;
+  word-break: break-word;
 }
 
 .topo {
@@ -75,8 +77,4 @@
   font-size: 28px;
   cursor: pointer;
   transition: 0.2s;
-}
-
-.btn-voltar:hover {
-  transform: scale(1.1);
 }

@@ -2,25 +2,25 @@
 
   <div class="conteudo-full">
 
-    <div class="header-biblioteca">
+    <div class="header-biblioteca d-flex justify-content-between align-items-center mb-4">
 
       <h2>Sistema Biblioteca</h2>
 
       <div>
 
-        <button class="botao-cadastro" routerLink="/cadastro">
+        <button class="btn btn-success me-2" routerLink="/cadastro">
           + Cadastrar Livro
         </button>
 
-        <button class="botao-cadastro" routerLink="/usuarios">
+        <button class="btn btn-success me-2" routerLink="/usuarios">
           Usuários
         </button>
 
-        <button class="botao-cadastro" routerLink="/livros/status">
+        <button class="btn btn-success me-2" routerLink="/livros/status">
           Gerenciar Status
         </button>
 
-        <button class="botao-cadastro" routerLink="/estatisticas">
+        <button class="btn btn-success me-2" routerLink="/estatisticas">
           Ver Estatísticas
         </button>
 
@@ -28,66 +28,115 @@
 
     </div>
 
-    <div class="estatisticas" *ngIf="mostrarEstatisticas && estatisticas">
+    <div
+      class="row g-4 mb-4"
+      *ngIf="mostrarEstatisticas && estatisticas">
 
-      <div class="card-estatistica">
-        <h4>Total de Livros</h4>
-        <p>{{ estatisticas.totalLivros }}</p>
+      <div class="col-md-4">
+
+        <div class="card shadow-sm border-0 h-100 text-center p-3">
+
+          <h4>Total de Livros</h4>
+
+          <p class="fs-3 fw-bold text-success">
+            {{ estatisticas.totalLivros }}
+          </p>
+
+        </div>
+
       </div>
 
-      <div class="card-estatistica">
-        <h4>Total de Exemplares</h4>
-        <p>{{ estatisticas.totalExemplares }}</p>
+      <div class="col-md-4">
+
+        <div class="card shadow-sm border-0 h-100 text-center p-3">
+
+          <h4>Total de Exemplares</h4>
+
+          <p class="fs-3 fw-bold text-success">
+            {{ estatisticas.totalExemplares }}
+          </p>
+
+        </div>
+
       </div>
 
-      <div class="card-estatistica">
-        <h4>Sem Estoque</h4>
+      <div class="col-md-4">
 
-        <p [style.color]="estatisticas.livrosSemEstoque > 0 ? 'red' : 'green'">
-          {{ estatisticas.livrosSemEstoque }}
-        </p>
+        <div class="card shadow-sm border-0 h-100 text-center p-3">
+
+          <h4>Sem Estoque</h4>
+
+          <p
+            class="fs-3 fw-bold"
+            [style.color]="estatisticas.livrosSemEstoque > 0 ? 'red' : 'green'">
+
+            {{ estatisticas.livrosSemEstoque }}
+
+          </p>
+
+        </div>
 
       </div>
 
     </div>
 
-    <div class="lista-livros">
+    <div class="row g-4">
 
-      <div class="livro-item" *ngFor="let livro of livros">
+      <div
+        class="col-md-4 col-lg-3"
+        *ngFor="let livro of livros">
 
-        <div class="livro-card">
+        <div class="card h-100 shadow-sm border-0">
 
           <img
             [src]="'http://localhost:8080/livros/' + livro.id + '/imagem'"
-            class="livro-img"
+            class="card-img-top livro-img"
             alt="Capa do livro">
 
-          <div class="card-body">
+          <div class="card-body d-flex flex-column p-4">
 
-            <h6>{{ livro.nome }}</h6>
+            <h5 class="card-title mb-2">
+              {{ livro.nome }}
+            </h5>
 
-            <p>{{ livro.autor }}</p>
+            <p class="text-muted mb-2">
+              {{ livro.autor }}
+            </p>
 
-            <p>ISBN: {{ livro.isbn }}</p>
+            <p class="small mb-2">
+              ISBN: {{ livro.isbn }}
+            </p>
 
-            <p class="qtd">
+            <p class="fw-bold text-success mb-3">
               Qtd: {{ livro.quantidade }}
             </p>
 
-            <div class="acoes-livro">
+            <div class="mt-auto">
 
-              <button (click)="emprestarLivro(livro.id)">
+              <button
+                class="btn btn-success btn-sm me-2"
+                (click)="emprestarLivro(livro.id)">
+
                 Emprestar
+
               </button>
 
-              <button (click)="devolverLivro(livro.id)">
+              <button
+                class="btn btn-outline-success btn-sm"
+                (click)="devolverLivro(livro.id)">
+
                 Devolver
+
               </button>
 
             </div>
 
-            <button (click)="inativarLivro(livro.id)">
+            <button
+              class="btn btn-danger btn-sm mt-3"
+              (click)="inativarLivro(livro.id)">
+
               Inativar
+
             </button>
 
           </div>

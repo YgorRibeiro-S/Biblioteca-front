@@ -1,32 +1,54 @@
 <div class="container mt-4">
 
-  <h2>Estatísticas da Biblioteca</h2>
+  <h2 class="fw-bold text-success mb-4">
+    Estatísticas da Biblioteca
+  </h2>
 
-  <div class="cards">
+  <div class="row g-4">
 
-    <div class="card">
-      <h3>Total de Livros</h3>
-      <p>{{ estatisticas?.totalLivros }}</p>
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0 h-100 text-center p-3">
+        <h4>Total de Livros</h4>
+        <p class="fs-3 fw-bold text-success">
+          {{ estatisticas?.totalLivros }}
+        </p>
+      </div>
     </div>
 
-    <div class="card">
-      <h3>Total de Exemplares</h3>
-      <p>{{ estatisticas?.totalExemplares }}</p>
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0 h-100 text-center p-3">
+        <h4>Total de Exemplares</h4>
+        <p class="fs-3 fw-bold text-success">
+          {{ estatisticas?.totalExemplares }}
+        </p>
+      </div>
     </div>
 
-    <div class="card">
-      <h3>Livros Sem Estoque</h3>
-      <p>{{ estatisticas?.livrosSemEstoque }}</p>
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0 h-100 text-center p-3">
+        <h4>Livros Sem Estoque</h4>
+        <p class="fs-3 fw-bold text-danger">
+          {{ estatisticas?.livrosSemEstoque }}
+        </p>
+      </div>
     </div>
 
-    <div class="card">
-      <h3>Livros Emprestados</h3>
-      <p>{{ estatisticas?.livrosEmprestados }}</p>
+    <div class="col-md-6">
+      <div class="card shadow-sm border-0 h-100 text-center p-3">
+        <h4>Livros Emprestados</h4>
+        <p class="fs-3 fw-bold text-success">
+          {{ estatisticas?.livrosEmprestados }}
+        </p>
+      </div>
     </div>
 
-    <div class="card">
-      <h3>Livros Devolvidos</h3>
-      <p>{{ estatisticas?.livrosDevolvidos }}</p>
+    <div class="col-md-6">
+      <div class="card shadow-sm border-0 h-100 text-center p-3">
+        <h4>Livros Devolvidos</h4>
+        <p class="fs-3 fw-bold text-success">
+          {{ estatisticas?.livrosDevolvidos }}
+        </p>
+      </div>
     </div>
 
   </div>
